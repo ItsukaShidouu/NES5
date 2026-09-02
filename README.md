@@ -16,14 +16,15 @@ Website resmi server Minecraft **NES5 NETWORK** (`nss.biz.id` / `java.nss.biz.id
 
 3. **Detail & Informasi Server**:
    - Informasi lengkap mengenai gameplay **Slimefun 4 Survival** (teknologi kelistrikan, industri otomatis, reaktor nuklir, sihir kuno, dan armor custom murni tanpa mod client).
-   - Penjelasan fitur ekonomi & player shop, sistem proteksi tanah (*land claim / anti-grief*), panduan 4 langkah cara bergabung, serta FAQ interaktif.
+   - Penjelasan fitur ekonomi & player shop, sistem proteksi tanah (*land claim / anti-grief*), dan panduan 4 langkah cara bergabung.
 
 4. **Toko Server Dinamis (`store.html` & `config.json`)**:
    - Seluruh produk, harga, kategori, dan deskripsi dimuat langsung dari file `config.json`.
-   - Filter kategori (VIP Ranks, Slimefun Boosters, Crate Keys, Koin & Claim) dan pencarian produk langsung.
+   - Filter kategori (*Normal & Paid Ranks*, *High Ranks*, *Special & Community Ranks*, *Slimefun Boosters*) dan pencarian produk langsung.
    - **Checkout Modal Interaktif**:
      - Kolom input Username Minecraft dengan pratinjau avatar kepala skin Minecraft real-time.
-     - Pilihan metode pembayaran (QRIS, DANA, GoPay, OVO, Transfer Bank).
+     - Pilihan metode pembayaran (QRIS, DANA, GoPay, OVO, Transfer Bank) untuk rank berbayar.
+     - Penanganan khusus untuk rank gratis/komunitas (Booster Discord, Viewers, Streamer).
      - Tombol order otomatis ke **WhatsApp Admin** (pesan terformat otomatis) dan **Salin Format Tiket Discord**.
 
 ---
@@ -33,7 +34,7 @@ Website resmi server Minecraft **NES5 NETWORK** (`nss.biz.id` / `java.nss.biz.id
 ```text
 NES5/
 ├── CNAME                    # Domain GitHub Pages: nss.biz.id
-├── index.html               # Halaman utama (Hero, Status, Fitur, Cara Join, FAQ)
+├── index.html               # Halaman utama (Hero, Status, Fitur, Cara Join)
 ├── store.html               # Halaman katalog toko server
 ├── config.json              # File konfigurasi produk, harga, kategori, dan kontak
 ├── assets/
@@ -58,8 +59,9 @@ Pada bagian `"server"`, ganti nomor WhatsApp atau link Discord:
 "server": {
   "name": "NES5 NETWORK",
   "ip": "java.nss.biz.id",
-  "discordUrl": "https://discord.gg/nes5",
-  "whatsappNumber": "6281234567890"
+  "discordUrl": "https://discord.gg/MX8ZTA9ZzA",
+  "discordChannelId": "1419480910419595384",
+  "whatsappNumber": "628123456789"
 }
 ```
 

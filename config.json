@@ -7,10 +7,11 @@
     "motd": "[⚡] SLIMEFUN SURVIVAL ▪ 1.8 - 1.21✨ New Economy • Magic & Tech • Active Community | Let's Play!",
     "currency": "Rp",
     "currencyCode": "IDR",
-    "discordUrl": "https://discord.gg/nes5",
+    "discordUrl": "https://discord.gg/MX8ZTA9ZzA",
+    "discordChannelId": "1419480910419595384",
     "whatsappNumber": "628123456789",
-    "adminContact": "Hubungi Admin via Ticket Discord atau WhatsApp jika membutuhkan bantuan donasi / pembelian.",
-    "paymentInstructions": "Setelah memilih produk, cantumkan Username Minecraft kamu. Pembayaran dapat dilakukan via QRIS, DANA, GoPay, OVO, atau Transfer Bank. Setelah transfer, kirim bukti bayar ke Admin untuk proses aktivasi kilat (1-5 menit)!"
+    "adminContact": "Hubungi Admin via Discord channel 1419480910419595384 untuk pembelian dan aktivasi rank.",
+    "paymentInstructions": "Pembelian rank diproses melalui server Discord resmi NES5 NETWORK di channel 1419480910419595384. Klik tombol 'Lanjut Beli di Discord' untuk menyalin format otomatis dan membuka channel!"
   },
   "paymentMethods": [
     { "id": "qris", "name": "QRIS (Semua Bank & E-Wallet)", "icon": "fa-qrcode" },
@@ -20,75 +21,177 @@
     { "id": "bank", "name": "Transfer Bank (BCA / Mandiri / BRI)", "icon": "fa-university" }
   ],
   "categories": [
-    { "id": "all", "name": "Semua Item", "icon": "fa-th-large" },
-    { "id": "ranks", "name": "VIP Ranks", "icon": "fa-crown" },
-    { "id": "slimefun", "name": "Slimefun Tech & Magic", "icon": "fa-atom" },
-    { "id": "keys", "name": "Crate Keys", "icon": "fa-key" },
-    { "id": "economy", "name": "Koin & Claim", "icon": "fa-coins" }
+    { "id": "all", "name": "Semua Rank & Item", "icon": "fa-th-large" },
+    { "id": "paid-ranks", "name": "Normal & Paid Ranks", "icon": "fa-crown" },
+    { "id": "high-ranks", "name": "High Ranks", "icon": "fa-gem" },
+    { "id": "community-ranks", "name": "Special & Community", "icon": "fa-users" },
+    { "id": "slimefun", "name": "Slimefun Boosters", "icon": "fa-atom" }
   ],
   "products": [
     {
-      "id": "rank-vip",
-      "name": "Rank VIP",
-      "category": "ranks",
+      "id": "rank-member",
+      "name": "Member",
+      "category": "paid-ranks",
+      "price": 0,
+      "badge": "GRATIS",
+      "badgeColor": "green",
+      "icon": "fa-user",
+      "duration": "Permanen",
+      "description": "Rank permulaan untuk seluruh petualang baru di NES5 NETWORK.",
+      "perks": [
+        "Akses Member Kit",
+        "Bekal awal petualangan (Iron Armor & Tools)",
+        "Akses ke dunia survival Slimefun 4",
+        "Sistem ekonomi pasar pemain"
+      ]
+    },
+    {
+      "id": "rank-nanomater",
+      "name": "Nanomater",
+      "category": "paid-ranks",
+      "price": 10000,
+      "originalPrice": 15000,
+      "badge": "10K",
+      "badgeColor": "green",
+      "icon": "fa-atom",
+      "duration": "Permanen",
+      "description": "Rank permulaan dengan kemampuan terbang bebas dan akses brankas portabel.",
+      "perks": [
+        "Akses Nanomater Kit",
+        "Fly Permanent (Terbang bebas tanpa batas)",
+        "Slot Set Home: 8 (/sethome)",
+        "RP Claim: 7 | RP Block: 65.000",
+        "Unlock /enderchest (Buka brankas portabel kapan saja)"
+      ]
+    },
+    {
+      "id": "rank-particle-wanderer",
+      "name": "Particle Wanderer",
+      "category": "paid-ranks",
       "price": 25000,
       "originalPrice": 35000,
-      "badge": "Hemat",
-      "badgeColor": "green",
-      "icon": "fa-shield-alt",
-      "duration": "Permanen / 30 Hari (Sesuai Pilihan)",
-      "description": "Rank permulaan yang sempurna untuk memulai petualangan di NES5 dengan berbagai kemudahan.",
-      "perks": [
-        "Prefix eksklusif [VIP] berwarna hijau mencolok",
-        "Akses perintah /fly di area claim pribadi",
-        "3x Slot Set Home (/sethome)",
-        "Bonus In-Game Currency $15,000",
-        "Akses Kit VIP mingguan (Armor & Tool Enchanted)",
-        "Akses prioritas masuk saat server penuh"
-      ]
-    },
-    {
-      "id": "rank-mvp",
-      "name": "Rank MVP",
-      "category": "ranks",
-      "price": 50000,
-      "originalPrice": 70000,
-      "badge": "TERPOPULER",
+      "badge": "25K",
       "badgeColor": "amber",
-      "icon": "fa-star",
+      "icon": "fa-wand-magic-sparkles",
       "duration": "Permanen",
-      "description": "Pilihan favorit para pemain! Nikmati kebebasan berkreasi dan keuntungan survival maksimal.",
+      "description": "Jelajahi dunia dengan identitas unik serta kapasitas proteksi tanah lebih luas.",
       "perks": [
-        "Semua keuntungan Rank VIP",
-        "Prefix mewah [MVP] dengan warna aqua glowing",
-        "/fly tanpa batasan di seluruh dunia Survival",
-        "7x Slot Set Home (/sethome)",
-        "Bonus In-Game Currency $40,000",
-        "Akses Kit MVP eksklusif (Netherite tier gear)",
-        "/workbench, /anvil, dan /enderchest portabel kapan saja",
-        "Diskon 10% di NPC Server Shop"
+        "Akses Particle Wanderer Kit",
+        "Slot Set Home: 10 (/sethome)",
+        "RP Claim: 9 | RP Block: 75.000",
+        "Ganti Nickname [/nick nama]",
+        "Semua keuntungan rank sebelumnya (Fly Permanent, /enderchest)"
       ]
     },
     {
-      "id": "rank-nes-pro",
-      "name": "Rank NES-PRO",
-      "category": "ranks",
-      "price": 100000,
-      "originalPrice": 140000,
-      "badge": "ULTIMATE",
+      "id": "rank-quantum-drifter",
+      "name": "Quantum Drifter",
+      "category": "high-ranks",
+      "price": 65000,
+      "originalPrice": 85000,
+      "badge": "65K",
       "badgeColor": "purple",
+      "icon": "fa-bolt",
+      "duration": "Permanen",
+      "description": "Fasilitas survival tingkat lanjut dengan fitur pemulihan dan perbaikan perlengkapan seketika.",
+      "perks": [
+        "Akses Quantum Drifter Kit",
+        "Slot Set Home: 12 (/sethome)",
+        "RP Claim: 10 | RP Block: 80.000",
+        "Akses perintah /disposal (Hapus item sampah instan)",
+        "Akses perintah /heal (Pemulihan darah instan)",
+        "Akses perintah /repair (Perbaiki armor & senjata)",
+        "Semua keuntungan rank sebelumnya"
+      ]
+    },
+    {
+      "id": "rank-temporal-sage",
+      "name": "Temporal Sage",
+      "category": "high-ranks",
+      "price": 95000,
+      "originalPrice": 120000,
+      "badge": "95K",
+      "badgeColor": "blue",
+      "icon": "fa-hourglass-half",
+      "duration": "Permanen",
+      "description": "Rank penguasa dimensi waktu dengan jangkauan klaim masif dan slot teleportasi lapang.",
+      "perks": [
+        "Akses Temporal Sage Kit",
+        "Slot Set Home: 14 (/sethome)",
+        "RP Claim: 12 | RP Block: 85.000",
+        "Semua keuntungan rank sebelumnya (/heal, /repair, /disposal, /nick, /fly)"
+      ]
+    },
+    {
+      "id": "rank-eternal-overload",
+      "name": "Eternal Overload",
+      "category": "high-ranks",
+      "price": 105000,
+      "originalPrice": 140000,
+      "badge": "105K • TOP",
+      "badgeColor": "red",
       "icon": "fa-crown",
       "duration": "Permanen",
-      "description": "Tingkat tertinggi bagi sultan NES5 NETWORK dengan fasilitas komplit tak tertandingi!",
+      "description": "Kasta sultan tertinggi di NES5 NETWORK! Kapasitas proteksi terluas dan keuntungan paling komplit.",
       "perks": [
-        "Semua keuntungan VIP & MVP",
-        "Prefix prestisius [NES-PRO] bergradasi emas",
-        "Slot Set Home Tanpa Batas (Unlimited /sethome)",
-        "Bonus In-Game Currency $100,000",
-        "Kit NES-PRO: Full Mythic Gear & Slimefun Resources",
-        "/feed dan /heal harian untuk kenyamanan bermain",
-        "/hat, /glow, dan efek partikel kosmetik sultan",
-        "Hak akses Discord VIP Lounge & role khusus"
+        "Akses Eternal Overload Kit",
+        "Slot Set Home: 15 (/sethome)",
+        "RP Claim: 15 | RP Block: 90.000",
+        "Semua keuntungan rank sebelumnya secara komplit",
+        "Prioritas utama antrian saat server penuh",
+        "Akses ruang VIP Lounge Discord"
+      ]
+    },
+    {
+      "id": "rank-moon",
+      "name": "MOON (Boost DC 2x)",
+      "category": "community-ranks",
+      "price": 0,
+      "badge": "BOOST DC",
+      "badgeColor": "purple",
+      "icon": "fa-moon",
+      "duration": "Selama Masa Boost",
+      "description": "Rank spesial bagi pendukung komunitas yang melakukan Server Boost di Discord NES5 NETWORK sebanyak 2x.",
+      "perks": [
+        "Setara benefit Nanomater",
+        "Upgrade Kit khusus Booster Server Discord",
+        "Fly Permanent & /enderchest",
+        "Role khusus Server Booster di Discord",
+        "Klaim via Ticket Discord dengan melampirkan bukti boost"
+      ]
+    },
+    {
+      "id": "rank-viewers",
+      "name": "Viewers Rank (VR)",
+      "category": "community-ranks",
+      "price": 0,
+      "badge": "VIEWERS",
+      "badgeColor": "blue",
+      "icon": "fa-eye",
+      "duration": "Event / Seasonal",
+      "description": "Rank apresiasi bagi penonton setia yang menonton streamer partner yang mempromosikan server NES5.",
+      "perks": [
+        "Setara benefit Booster",
+        "Didapat dari menonton streamer promosi server NESS",
+        "Kit khusus Viewer Komunitas",
+        "Akses ke giveaway eksklusif penonton streaming"
+      ]
+    },
+    {
+      "id": "rank-streamer",
+      "name": "YUTUBER / Streamer (STR)",
+      "category": "community-ranks",
+      "price": 0,
+      "badge": "CREATOR",
+      "badgeColor": "red",
+      "icon": "fa-video",
+      "duration": "Aktif Partner",
+      "description": "Rank eksklusif bagi konten kreator YouTube & TikTok yang aktif streaming dan promosi server NES5.",
+      "perks": [
+        "Setara benefit PWD / Nanomater",
+        "Didapat dari aktif streaming promosi server NESS",
+        "Prefix eksklusif [STREAMER] / [YOUTUBER]",
+        "Akses broadcast pengumuman live stream in-game & Discord"
       ]
     },
     {
@@ -107,8 +210,7 @@
         "64x Magical Dust untuk riset sihir",
         "32x Synthetic Diamond & Carbon",
         "16x Basic Circuit Board",
-        "1x Starter Electricity Generator & Regulator",
-        "Bonus $10,000 untuk modal belanja komponen"
+        "1x Starter Electricity Generator & Regulator"
       ]
     },
     {
@@ -127,8 +229,7 @@
         "64x Refined Uranium Rods",
         "128x Reactor Cooling Cells",
         "1x Electric Jetpack (Baterai Maksimal)",
-        "1x Energy Capacitor Tier 3 (1,000,000 J)",
-        "Panduan setup reaktor anti-meledak"
+        "1x Energy Capacitor Tier 3 (1,000,000 J)"
       ]
     },
     {
@@ -149,80 +250,6 @@
         "1x Tome of Knowledge (Buka Ratusan Recipe Slimefun)",
         "Staff of Wind & Staff of Lightning"
       ]
-    },
-    {
-      "id": "crate-legendary-3",
-      "name": "3x Legendary Crate Keys",
-      "category": "keys",
-      "price": 15000,
-      "originalPrice": 20000,
-      "badge": "Best Value",
-      "badgeColor": "amber",
-      "icon": "fa-key",
-      "duration": "Langsung dikirim in-game",
-      "description": "Buka peti harta karun legendaris di spawn dan dapatkan drop gear tingkat dewa!",
-      "perks": [
-        "3x Kunci Peti Legendary di Spawn Area",
-        "Peluang mendapatkan Senjata & Armor Custom Slimefun",
-        "Peluang jackpot uang hingga $250,000",
-        "Peluang memenangkan voucher Rank Upgrade",
-        "100% Dijamin mendapat item tier berharga"
-      ]
-    },
-    {
-      "id": "crate-mystic-5",
-      "name": "5x Mystic Crate Keys",
-      "category": "keys",
-      "price": 25000,
-      "originalPrice": 35000,
-      "badge": "Laris",
-      "badgeColor": "green",
-      "icon": "fa-gem",
-      "duration": "Langsung dikirim in-game",
-      "description": "Koleksi kunci mistik untuk membuka crate spesial dengan efek visual kosmetik unik.",
-      "perks": [
-        "5x Kunci Peti Mystic Crate",
-        "Akses efek kosmetik partikel & kill effect",
-        "Rare Material Caches untuk teknologi Slimefun",
-        "Bonus 500 Claim Blocks setiap pembukaan"
-      ]
-    },
-    {
-      "id": "money-50k",
-      "name": "Paket Saldo $50,000",
-      "category": "economy",
-      "price": 10000,
-      "originalPrice": 15000,
-      "badge": "Instan",
-      "badgeColor": "blue",
-      "icon": "fa-money-bill-wave",
-      "duration": "Langsung Masuk Akun",
-      "description": "Suntikan dana instan ke rekening in-game kamu untuk belanja di pasar pemain.",
-      "perks": [
-        "$50,000 In-game money",
-        "Dapat dipakai untuk beli barang di /ah atau /shop",
-        "Dapat digunakan untuk sewa stan player shop di spawn",
-        "Transaksi instan tanpa delay"
-      ]
-    },
-    {
-      "id": "claim-blocks-2500",
-      "name": "2.500 Extra Claim Blocks",
-      "category": "economy",
-      "price": 15000,
-      "originalPrice": 20000,
-      "badge": "Anti-Grief",
-      "badgeColor": "green",
-      "icon": "fa-layer-group",
-      "duration": "Permanen",
-      "description": "Perluas kerajaan dan pabrik Slimefun-mu tanpa takut di-grief atau diganggu pemain lain.",
-      "perks": [
-        "+2,500 Block proteksi tanah / land claim",
-        "Proteksi penuh dari ledakan creeper, api, dan maling",
-        "Bisa memberi izin sub-claim untuk teman terpercaya",
-        "Klaim permanen tidak akan kedaluwarsa"
-      ]
     }
   ]
 }
-

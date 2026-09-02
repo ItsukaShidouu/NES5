@@ -104,9 +104,18 @@ function renderProducts() {
     `).join('') : '';
 
     // Pricing format
+    const isFree = product.price === 0;
     const formattedPrice = formatRupiah(product.price);
     const originalPriceHtml = product.originalPrice ? 
       `<span class="original-price">${formatRupiah(product.originalPrice)}</span>` : '';
+
+    const priceBlock = isFree ? 
+      `<div class="current-price" style="color: #34d399; font-size: 1.15rem;">GRATIS / SYARAT</div>` : 
+      `<div class="current-price"><span>Rp</span> ${formattedPrice}</div>`;
+
+    const buttonHtml = isFree ?
+      `<button class="btn btn-secondary btn-sm btn-buy" data-product-id="${product.id}"><i class="fa-solid fa-gift"></i> Detail & Klaim</button>` :
+      `<button class="btn btn-primary btn-sm btn-buy" data-product-id="${product.id}"><i class="fa-solid fa-cart-shopping"></i> Beli</button>`;
 
     card.innerHTML = `
       ${badgeHtml}
@@ -122,11 +131,9 @@ function renderProducts() {
       <div class="product-footer">
         <div class="product-pricing">
           ${originalPriceHtml}
-          <div class="current-price"><span>Rp</span> ${formattedPrice}</div>
+          ${priceBlock}
         </div>
-        <button class="btn btn-primary btn-sm btn-buy" data-product-id="${product.id}">
-          <i class="fa-solid fa-cart-shopping"></i> Beli
-        </button>
+        ${buttonHtml}
       </div>
     `;
 
@@ -181,8 +188,13 @@ function initStoreEvents() {
   }
 
   // Action buttons inside modal
+  const btnDiscord = document.getElementById('modal-btn-discord');
   const btnWhatsapp = document.getElementById('modal-btn-whatsapp');
   const btnCopyFormat = document.getElementById('modal-btn-copy-format');
+
+  if (btnDiscord) {
+    btnDiscord.addEventListener('click', handleDiscordCheckout);
+  }
 
   if (btnWhatsapp) {
     btnWhatsapp.addEventListener('click', handleWhatsappCheckout);
@@ -220,12 +232,24 @@ function openCheckoutModal(product) {
   const modal = document.getElementById('checkout-modal');
   if (!modal) return;
 
+  const isFree = product.price === 0;
+
   document.getElementById('modal-product-title').textContent = product.name;
-  document.getElementById('modal-product-price').textContent = `Rp ${formatRupiah(product.price)}`;
+  document.getElementById('modal-product-price').textContent = isFree ? 'GRATIS / SYARAT' : `Rp ${formatRupiah(product.price)}`;
 
   const instructions = document.getElementById('modal-payment-instruction');
-  if (instructions && storeConfig?.server?.paymentInstructions) {
-    instructions.textContent = storeConfig.server.paymentInstructions;
+  const paymentMethodsGroup = document.getElementById('payment-methods-list')?.closest('.form-group');
+
+  if (isFree) {
+    if (paymentMethodsGroup) paymentMethodsGroup.style.display = 'none';
+    if (instructions) {
+      instructions.innerHTML = `<strong>Klaim Komunitas/Gratis:</strong> Rank ini didapatkan secara gratis atau melalui syarat khusus (seperti Boost Discord 2x / Menonton Streamer / Menjadi Streamer Partner). Silakan hubungi Admin via WhatsApp atau Tiket Discord untuk aktivasi!`;
+    }
+  } else {
+    if (paymentMethodsGroup) paymentMethodsGroup.style.display = 'block';
+    if (instructions && storeConfig?.server?.paymentInstructions) {
+      instructions.textContent = storeConfig.server.paymentInstructions;
+    }
   }
 
   modal.classList.add('active');
@@ -239,6 +263,41 @@ function closeCheckoutModal() {
     modal.classList.remove('active');
     document.body.style.overflow = '';
   }
+/* Discord Order Integration */
+function handleDiscordCheckout() {
+  if (!selectedProduct) return;
+
+  const usernameInput = document.getElementById('mc-username-input');
+  const username = usernameInput ? usernameInput.value.trim() : '';
+
+  if (!username) {
+    alert('Mohon masukkan Username Minecraft kamu terlebih dahulu!');
+    usernameInput?.focus();
+    return;
+  }
+
+  const isFree = selectedProduct.price === 0;
+  const price = isFree ? 'GRATIS / SYARAT KOMUNITAS' : `Rp ${formatRupiah(selectedProduct.price)}`;
+  const channelId = storeConfig?.server?.discordChannelId || '1419480910419595384';
+  const discordUrl = storeConfig?.server?.discordUrl || 'https://discord.gg/MX8ZTA9ZzA';
+
+  const ticketFormat = 
+`=== FORM PEMBELIAN RANK NES5 NETWORK ===
+Produk           : ${selectedProduct.name}
+Harga/Biaya      : ${price}
+Username Minecraft: ${username}
+Metode/Syarat    : ${isFree ? 'Klaim Komunitas / Event' : (selectedPaymentMethod || 'QRIS')}
+Tujuan Channel   : #${channelId}
+Catatan          : Halo Admin, saya ingin membeli/mengaktifkan rank ini.
+========================================`;
+
+  navigator.clipboard.writeText(ticketFormat).then(() => {
+    alert(`Format pembelian berhasil disalin ke clipboard!\n\nKamu akan diarahkan ke server Discord NES5 NETWORK.\nSilakan tempel (Ctrl+V) pesanan kamu di channel #${channelId}.`);
+    window.open(discordUrl, '_blank');
+  }).catch(() => {
+    prompt('Salin format teks berikut lalu kirimkan ke channel Discord ' + channelId + ':', ticketFormat);
+    window.open(discordUrl, '_blank');
+  });
 }
 
 /* WhatsApp Order Integration */
@@ -255,18 +314,32 @@ function handleWhatsappCheckout() {
   }
 
   const phone = storeConfig?.server?.whatsappNumber || '628123456789';
-  const price = formatRupiah(selectedProduct.price);
+  const isFree = selectedProduct.price === 0;
+  const price = isFree ? 'GRATIS / SYARAT KOMUNITAS' : `Rp ${formatRupiah(selectedProduct.price)}`;
 
-  const message = 
+  let message = '';
+  if (isFree) {
+    message = 
 `Halo Admin NES5 NETWORK!
-Saya ingin melakukan pembelian di Store Server:
+Saya ingin melakukan klaim rank di Server:
+━━━━━━━━━━━━━━━━━━━━
+• Rank: ${selectedProduct.name}
+• Biaya: ${price}
+• Username Minecraft: ${username}
+━━━━━━━━━━━━━━━━━━━━
+Mohon info verifikasi dan bantuan aktivasi rank ini. Terima kasih!`;
+  } else {
+    message = 
+`Halo Admin NES5 NETWORK!
+Saya ingin melakukan pembelian rank/item di Store:
 ━━━━━━━━━━━━━━━━━━━━
 • Produk: ${selectedProduct.name}
-• Harga: Rp ${price}
+• Harga: ${price}
 • Username Minecraft: ${username}
 • Metode Pembayaran: ${selectedPaymentMethod || 'QRIS'}
 ━━━━━━━━━━━━━━━━━━━━
 Mohon informasi nomor rekening / QRIS untuk penyelesaian transaksi ini. Terima kasih!`;
+  }
 
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   window.open(url, '_blank');
@@ -285,21 +358,22 @@ function handleCopyDiscordFormat() {
     return;
   }
 
-  const price = formatRupiah(selectedProduct.price);
+  const isFree = selectedProduct.price === 0;
+  const price = isFree ? 'GRATIS / SYARAT KOMUNITAS' : `Rp ${formatRupiah(selectedProduct.price)}`;
 
   const ticketFormat = 
-`=== FORM PEMBELIAN STORE NES5 NETWORK ===
+`=== FORM STORE / KLAIM RANK NES5 NETWORK ===
 Produk           : ${selectedProduct.name}
-Harga            : Rp ${price}
+Harga/Biaya      : ${price}
 Username Minecraft: ${username}
-Metode Bayar     : ${selectedPaymentMethod || 'QRIS'}
-Catatan          : Siap transfer & konfirmasi bukti pembayaran.
-=========================================`;
+Metode/Syarat    : ${isFree ? 'Klaim Komunitas / Event' : (selectedPaymentMethod || 'QRIS')}
+Catatan          : Mohon diproses oleh Admin NES5.
+============================================`;
 
   navigator.clipboard.writeText(ticketFormat).then(() => {
-    alert('Format tiket berhasil disalin! Silakan paste (Ctrl+V) ke Discord Ticket admin kami.');
+    alert('Format order/klaim berhasil disalin! Silakan paste (Ctrl+V) ke Discord Ticket admin kami.');
   }).catch(() => {
-    prompt('Salin teks order berikut:', ticketFormat);
+    prompt('Salin teks berikut:', ticketFormat);
   });
 }
 
@@ -308,4 +382,3 @@ function formatRupiah(angka) {
   if (angka === undefined || angka === null) return '0';
   return angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
-
