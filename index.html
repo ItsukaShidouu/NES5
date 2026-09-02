@@ -33,26 +33,36 @@
   <canvas id="particles-canvas" class="particles-canvas"></canvas>
 
   <!-- Navigation Bar -->
-  <header class="navbar">
+  <header class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo">
+      <a href="#beranda" class="logo">
         <div class="logo-badge">
           <i class="fa-solid fa-cube"></i>
         </div>
         <div class="logo-text">NES5 <span>NETWORK</span></div>
       </a>
 
-      <ul class="nav-links">
-        <li class="nav-item"><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Beranda</a></li>
-        <li class="nav-item"><a href="#fitur"><i class="fa-solid fa-sparkles"></i> Fitur Unggulan</a></li>
-        <li class="nav-item"><a href="#slimefun"><i class="fa-solid fa-atom"></i> Slimefun 4</a></li>
-        <li class="nav-item"><a href="#panduan"><i class="fa-solid fa-compass"></i> Cara Main</a></li>
-      </ul>
+      <nav class="nav-menu">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="#beranda" class="nav-link active"><i class="fa-solid fa-house"></i> Beranda</a></li>
+          <li class="nav-item"><a href="#fitur" class="nav-link"><i class="fa-solid fa-sparkles"></i> Fitur</a></li>
+          <li class="nav-item"><a href="#slimefun" class="nav-link"><i class="fa-solid fa-atom"></i> Slimefun 4</a></li>
+          <li class="nav-item"><a href="#panduan" class="nav-link"><i class="fa-solid fa-compass"></i> Cara Main</a></li>
+        </ul>
+      </nav>
 
       <div class="nav-actions">
-        <a href="store.html" class="btn btn-store btn-sm">
-          <i class="fa-solid fa-bag-shopping"></i> Store
+        <!-- Interactive IP Copy Pill Button -->
+        <button class="nav-ip-pill" data-copy-ip="java.nss.biz.id" title="Klik untuk menyalin IP Server">
+          <span class="live-dot"></span>
+          <span class="nav-ip-text">java.nss.biz.id</span>
+          <span class="nav-copy-tag"><i class="fa-solid fa-copy"></i> Salin</span>
+        </button>
+
+        <a href="https://discord.gg/MX8ZTA9ZzA" target="_blank" rel="noopener" class="btn btn-discord btn-sm nav-discord-btn">
+          <i class="fa-brands fa-discord"></i> Discord
         </a>
+
         <button class="nav-toggle" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -61,7 +71,7 @@
   </header>
 
   <!-- Hero Section -->
-  <main>
+  <main id="beranda">
     <section class="hero">
       <div class="container">
         <div class="hero-pill">
@@ -79,14 +89,14 @@
         </p>
 
         <div class="hero-cta">
-          <a href="store.html" class="btn btn-store">
-            <i class="fa-solid fa-crown"></i> Kunjungi Store Server
+          <a href="#panduan" class="btn btn-primary">
+            <i class="fa-solid fa-play"></i> Mulai Bermain
+          </a>
+          <a href="https://discord.gg/MX8ZTA9ZzA" target="_blank" rel="noopener" class="btn btn-discord">
+            <i class="fa-brands fa-discord"></i> Gabung Discord
           </a>
           <a href="https://minecraft-mp.com/server/363257/vote/" target="_blank" rel="noopener" class="btn btn-secondary">
             <i class="fa-solid fa-thumbs-up"></i> Vote Server
-          </a>
-          <a href="https://discord.gg/MX8ZTA9ZzA" target="_blank" rel="noopener" class="btn btn-discord">
-            <i class="fa-brands fa-discord"></i> Discord Community
           </a>
         </div>
 
@@ -244,9 +254,14 @@
               <li><i class="fa-solid fa-check-circle"></i> <span><strong>Sains & Sihir:</strong> Altar ritual kuno, talisman penangkal damage, dan tongkat sihir.</span></li>
               <li><i class="fa-solid fa-check-circle"></i> <span><strong>Reaktor Nuklir:</strong> Pembangkit tenaga uranium dengan sistem pendingin canggih.</span></li>
             </ul>
-            <a href="store.html" class="btn btn-primary">
-              <i class="fa-solid fa-flask"></i> Cek Booster Slimefun di Store
-            </a>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <a href="#panduan" class="btn btn-primary">
+                <i class="fa-solid fa-gamepad"></i> Mulai Main Sekarang
+              </a>
+              <a href="https://discord.gg/MX8ZTA9ZzA" target="_blank" rel="noopener" class="btn btn-discord">
+                <i class="fa-brands fa-discord"></i> Tanya di Komunitas
+              </a>
+            </div>
           </div>
 
           <div class="sf-preview-box">
@@ -356,10 +371,9 @@
         <div class="footer-links">
           <h4>Navigasi</h4>
           <ul>
-            <li><a href="index.html">Beranda</a></li>
+            <li><a href="#beranda">Beranda</a></li>
             <li><a href="#fitur">Fitur Server</a></li>
             <li><a href="#slimefun">Slimefun 4</a></li>
-            <li><a href="store.html">Toko / Store</a></li>
             <li><a href="#panduan">Panduan Join</a></li>
           </ul>
         </div>

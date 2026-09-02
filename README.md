@@ -1,31 +1,31 @@
-# NES5 NETWORK - Official Minecraft Server Website & Store
+# NES5 NETWORK - Official Minecraft Server Website
 
-Website resmi server Minecraft **NES5 NETWORK** (`nss.biz.id` / `java.nss.biz.id`) dengan tema visual lanskap Minecraft modern, informasi server lengkap, live status ping, serta halaman Toko (Store) dinamis berbasis konfigurasi `config.json`.
+Website resmi server Minecraft **NES5 NETWORK** (`nss.biz.id` / `java.nss.biz.id`) dengan tampilan visual lanskap Minecraft modern, *floating glass island navbar*, informasi server lengkap, dan live status ping real-time.
 
 ---
 
 ## 🌟 Fitur Utama Website
 
-1. **Minecraft Landscape Background**:
-   - Pemandangan shaders Minecraft resolusi tinggi sebagai latar belakang dengan efek partikel partikel atmosfer (spores/dust) halus yang bergerak.
-   - Desain antarmuka *dark glassmorphism* yang elegan, responsif di HP, tablet, dan komputer.
+1. **Aesthetic Floating Navbar**:
+   - Desain modern *floating glass island* dengan efek *backdrop blur*, border glow halus, dan animasi logo.
+   - Tombol interaktif penyalin IP instan (`java.nss.biz.id`) dengan indikator status online dan animasi toast.
+   - Tombol akses cepat ke server Discord resmi.
+   - Responsif di perangkat mobile dengan menu transisi halus.
 
-2. **Integrasi Server Real-Time**:
-   - Menampilkan status live online dan jumlah pemain saat ini secara otomatis menggunakan API publik `mcsrvstat.us`.
-   - Tombol **Salin IP** (`java.nss.biz.id`) sekali klik dengan notifikasi toast instan.
+2. **Minecraft Landscape Backdrop & Particles**:
+   - Pemandangan shaders Minecraft resolusi tinggi sebagai latar belakang dinamis dengan partikel atmosfer (*spores/dust*) yang melayang lembut.
+   - Antarmuka *dark glassmorphism* yang nyaman dipandang.
 
-3. **Detail & Informasi Server**:
-   - Informasi lengkap mengenai gameplay **Slimefun 4 Survival** (teknologi kelistrikan, industri otomatis, reaktor nuklir, sihir kuno, dan armor custom murni tanpa mod client).
-   - Penjelasan fitur ekonomi & player shop, sistem proteksi tanah (*land claim / anti-grief*), dan panduan 4 langkah cara bergabung.
+3. **Integrasi Server Real-Time**:
+   - Menampilkan status server online dan jumlah pemain saat ini secara otomatis menggunakan API publik `mcsrvstat.us`.
+   - Kotak IP interaktif dengan sekali klik untuk menyalin alamat server.
 
-4. **Toko Server Dinamis (`store.html` & `config.json`)**:
-   - Seluruh produk, harga, kategori, dan deskripsi dimuat langsung dari file `config.json`.
-   - Filter kategori (*Normal & Paid Ranks*, *High Ranks*, *Special & Community Ranks*, *Slimefun Boosters*) dan pencarian produk langsung.
-   - **Checkout Modal Interaktif**:
-     - Kolom input Username Minecraft dengan pratinjau avatar kepala skin Minecraft real-time.
-     - Pilihan metode pembayaran (QRIS, DANA, GoPay, OVO, Transfer Bank) untuk rank berbayar.
-     - Penanganan khusus untuk rank gratis/komunitas (Booster Discord, Viewers, Streamer).
-     - Tombol order otomatis ke **WhatsApp Admin** (pesan terformat otomatis) dan **Salin Format Tiket Discord**.
+4. **Detail & Informasi Server Lengkap**:
+   - Penjelasan mendalam gameplay **Slimefun 4 Survival** (teknologi kelistrikan, otomatisasi industri, reaktor nuklir, magis kuno, dan armor khusus murni tanpa mod client).
+   - Fitur ekonomi pasar pemain, sistem proteksi tanah (*land claim / anti-grief*), serta panduan 4 langkah mudah cara bergabung bagi pemain baru.
+
+5. **Integrasi Komunitas Discord**:
+   - Tautan langsung ke server Discord komunitas resmi [NES5 NETWORK](https://discord.gg/MX8ZTA9ZzA) untuk event, pengumuman, dan pembelian/klaim rank di channel `1419480910419595384`.
 
 ---
 
@@ -35,71 +35,22 @@ Website resmi server Minecraft **NES5 NETWORK** (`nss.biz.id` / `java.nss.biz.id
 NES5/
 ├── CNAME                    # Domain GitHub Pages: nss.biz.id
 ├── index.html               # Halaman utama (Hero, Status, Fitur, Cara Join)
-├── store.html               # Halaman katalog toko server
-├── config.json              # File konfigurasi produk, harga, kategori, dan kontak
+├── config.json              # Data server & konfigurasi rank
 ├── assets/
 │   ├── css/
-│   │   ├── style.css        # Desain utama dan responsif
-│   │   └── store.css        # Gaya kartu produk, filter, dan modal checkout
+│   │   └── style.css        # Desain utama, floating navbar estetik, dan responsif
 │   └── js/
-│       ├── main.js          # Live status ping, copy IP, partikel canvas, navbar
-│       └── store.js         # Engine katalog toko dari config.json
-└── README.md                # Dokumentasi panduan
+│       └── main.js          # Live status ping, copy IP toast, navbar scroll spy, partikel canvas
+└── README.md                # Dokumentasi proyek
 ```
-
----
-
-## ⚙️ Panduan Menambah / Mengubah Produk di `config.json`
-
-Untuk mengubah atau menambah produk baru, kamu cukup membuka file [`config.json`](file:///c:/Users/Administrator/Documents/GitHub/NES5/config.json).
-
-### 1. Mengubah Kontak Admin & WhatsApp
-Pada bagian `"server"`, ganti nomor WhatsApp atau link Discord:
-```json
-"server": {
-  "name": "NES5 NETWORK",
-  "ip": "java.nss.biz.id",
-  "discordUrl": "https://discord.gg/MX8ZTA9ZzA",
-  "discordChannelId": "1419480910419595384",
-  "whatsappNumber": "628123456789"
-}
-```
-
-### 2. Menambah Produk Baru
-Tambahkan objek baru ke dalam array `"products"`:
-```json
-{
-  "id": "rank-sultan",
-  "name": "Rank Sultan",
-  "category": "ranks",
-  "price": 150000,
-  "originalPrice": 200000,
-  "badge": "BARU",
-  "badgeColor": "amber",
-  "icon": "fa-crown",
-  "duration": "Permanen",
-  "description": "Rank tertinggi dengan fasilitas tak terbatas!",
-  "perks": [
-    "Prefix [SULTAN] Emas",
-    "Akses /fly di semua dunia",
-    "Kit mingguan super lengkap",
-    "Diskon 20% di NPC Shop"
-  ]
-}
-```
-
-Pilihan warna badge (`badgeColor`): `green`, `amber`, `purple`, `red`, `blue`.
 
 ---
 
 ## 🚀 Menjalankan Website Secara Lokal
 
-Kamu bisa membuka file `index.html` dan `store.html` langsung di browser favoritmu, atau menggunakan local HTTP server seperti:
+Buka file `index.html` langsung di browser, atau gunakan local web server:
 ```bash
 # Menggunakan Python
 python -m http.server 8000
-
-# Menggunakan npx serve
-npx serve .
 ```
-Lalu buka `http://localhost:8000` di browser.
+Buka `http://localhost:8000` pada browser favorit Anda.
