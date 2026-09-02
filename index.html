@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NES5 NETWORK | Official Minecraft Server Indonesia</title>
+  <meta name="description" content="NES5 NETWORK - Server Minecraft Survival Slimefun 4 Indonesia terbaik versi 1.8 - 1.21. Teknologi modern, sihir, ekonomi pemain, dan land claim anti-grief murni tanpa mod!">
+  <meta name="keywords" content="NES5 NETWORK, Minecraft Server Indonesia, Slimefun 4, Survival SMP, Minecraft 1.20.6, Minecraft 1.21, java.nss.biz.id">
+  <meta name="author" content="NES5 NETWORK">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="NES5 NETWORK | Server Minecraft Slimefun 4 Indonesia">
+  <meta property="og:description" content="Nikmati petualangan Survival Slimefun 4 dengan teknologi canggih, reaktor nuklir, sihir, dan komunitas aktif!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nss.biz.id">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="https://minecraft-mp.com/images/favicon/363257.png?ts=1788218365">
+</head>
+<body>
+
+  <!-- Minecraft Landscape Background & Particles -->
+  <div class="minecraft-backdrop"></div>
+  <canvas id="particles-canvas" class="particles-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-badge">
+          <i class="fa-solid fa-cube"></i>
+        </div>
+        <div class="logo-text">NES5 <span>NETWORK</span></div>
+      </a>
+
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Beranda</a></li>
+        <li class="nav-item"><a href="#fitur"><i class="fa-solid fa-sparkles"></i> Fitur Unggulan</a></li>
+        <li class="nav-item"><a href="#slimefun"><i class="fa-solid fa-atom"></i> Slimefun 4</a></li>
+        <li class="nav-item"><a href="#panduan"><i class="fa-solid fa-compass"></i> Cara Main</a></li>
+        <li class="nav-item"><a href="#faq"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+        <li class="nav-item"><a href="store.html" class="nav-store-link"><i class="fa-solid fa-store"></i> Toko / Store</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="store.html" class="btn btn-store btn-sm">
+          <i class="fa-solid fa-bag-shopping"></i> Store
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-pill">
+          <span class="pulse-dot"></span>
+          <span>SERVER AKTIF • SURVIVAL SLIMEFUN 4 (1.8 - 1.21)</span>
+        </div>
+
+        <h1 class="hero-title">
+          Jelajahi Dunia <span class="highlight">NES5 NETWORK</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Bosan dengan survival vanilla biasa? Rasakan sensasi modpack seru tanpa perlu mengunduh mod tambahan! 
+          Teknologi canggih, reaktor industri, sihir, serta ekonomi komunitas menunggu kamu.
+        </p>
+
+        <div class="hero-cta">
+          <a href="store.html" class="btn btn-store">
+            <i class="fa-solid fa-crown"></i> Kunjungi Store Server
+          </a>
+          <a href="https://minecraft-mp.com/server/363257/vote/" target="_blank" rel="noopener" class="btn btn-secondary">
+            <i class="fa-solid fa-thumbs-up"></i> Vote Server
+          </a>
+          <a href="https://discord.gg/nes5" target="_blank" rel="noopener" class="btn btn-discord">
+            <i class="fa-brands fa-discord"></i> Discord Community
+          </a>
+        </div>
+
+        <!-- Interactive IP Copy Box -->
+        <div class="ip-box-container">
+          <div class="ip-box" data-copy-ip="java.nss.biz.id" title="Klik untuk menyalin IP Server">
+            <div class="ip-details">
+              <span class="ip-label"><i class="fa-solid fa-network-wired"></i> Server Java IP (Klik Salin)</span>
+              <span class="ip-value">java.nss.biz.id</span>
+            </div>
+            <div class="ip-action">
+              <i class="fa-solid fa-copy"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real-Time Server Status Bar -->
+    <section class="status-bar-section">
+      <div class="container">
+        <div class="status-bar">
+          <div class="status-item">
+            <div class="status-icon green">
+              <i class="fa-solid fa-signal"></i>
+            </div>
+            <div class="status-info">
+              <h4>Status Server</h4>
+              <p id="server-status-badge">Memeriksa...</p>
+            </div>
+          </div>
+
+          <div class="status-item">
+            <div class="status-icon blue">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="status-info">
+              <h4>Pemain Online</h4>
+              <p id="player-count">Memuat data...</p>
+            </div>
+          </div>
+
+          <div class="status-item">
+            <div class="status-icon amber">
+              <i class="fa-solid fa-code-branch"></i>
+            </div>
+            <div class="status-info">
+              <h4>Dukungan Versi</h4>
+              <p id="server-version">1.8 - 1.21 (Rec: 1.20.6)</p>
+            </div>
+          </div>
+
+          <div class="status-item">
+            <div class="status-icon purple">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="status-info">
+              <h4>Lokasi Host</h4>
+              <p>Indonesia (Low Latency)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Server Features Section -->
+    <section class="section" id="fitur">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Keunggulan Server</span>
+          <h2 class="section-title">Mengapa Memilih NES5 NETWORK?</h2>
+          <p class="section-desc">Kami menghadirkan ekosistem Minecraft Survival dengan fitur terlengkap, bebas toxic, dan ramah pemain baru.</p>
+        </div>
+
+        <div class="feature-grid">
+          <!-- Card 1: Slimefun 4 -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i class="fa-solid fa-atom"></i>
+            </div>
+            <h3>Slimefun 4 Survival</h3>
+            <p>
+              Buka potensi tak terbatas dengan ratusan item teknologi, mesin listrik otomatis, senjata magis, dan reaktor nuklir — <strong>100% murni tanpa mod client</strong>.
+            </p>
+          </div>
+
+          <!-- Card 2: Economy & Player Shop -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i class="fa-solid fa-coins"></i>
+            </div>
+            <h3>Sistem Ekonomi & Player Shop</h3>
+            <p>
+              Jual hasil panen, bijih tambang, atau rakitan mesin berhargamu kepada pemain lain. Bangun kerajaan bisnis dan jadilah konglomerat di NES5!
+            </p>
+          </div>
+
+          <!-- Card 3: Anti-Grief & Land Claim -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>Land Claim Anti-Grief</h3>
+            <p>
+              Lindungi bangunan megah dan pabrik industrimu dari aksi pencurian atau perusakan dengan sistem proteksi tanah yang mudah digunakan.
+            </p>
+          </div>
+
+          <!-- Card 4: Multi-Version Support -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i class="fa-solid fa-shuffle"></i>
+            </div>
+            <h3>Dukungan Lintas Versi</h3>
+            <p>
+              Masuk dan bermain dengan nyaman menggunakan client Minecraft versi 1.8 hingga 1.21. Dioptimalkan secara mulus untuk versi 1.20.6+.
+            </p>
+          </div>
+
+          <!-- Card 5: Friendly Community -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <h3>Komunitas Ramah & Staf Sigap</h3>
+            <p>
+              Lingkungan bermain yang sehat, suportif, serta tim staf yang siap mendampingi dan menjawab pertanyaan pemain baru kapan pun.
+            </p>
+          </div>
+
+          <!-- Card 6: Uptime 100% Hosted in ID -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h3>Server Cepat & Uptime 100%</h3>
+            <p>
+              Server ditempatkan di data center Indonesia dengan konektivitas tinggi dan hardware optimal untuk meminimalkan lag saat pabrikmu bekerja.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slimefun Showcase Deep-Dive -->
+        <div class="sf-showcase" id="slimefun">
+          <div class="sf-showcase-content">
+            <span class="section-tag">Fitur Utama</span>
+            <h3>Revolusi Survival: Slimefun 4</h3>
+            <p>
+              Buku panduan interaktif <em>Slimefun Guide</em> dapat kamu buka langsung di dalam game. 
+              Mulai riset dari peralatan sederhana hingga peradaban masa depan!
+            </p>
+            <ul class="sf-list">
+              <li><i class="fa-solid fa-check-circle"></i> <span><strong>Energi & Kelistrikan:</strong> Solar panel, generator baterai, dan kapasitor daya.</span></li>
+              <li><i class="fa-solid fa-check-circle"></i> <span><strong>Mesin Otomatis:</strong> Auto-drier, ore crusher, smelter industri, dan jetpack.</span></li>
+              <li><i class="fa-solid fa-check-circle"></i> <span><strong>Sains & Sihir:</strong> Altar ritual kuno, talisman penangkal damage, dan tongkat sihir.</span></li>
+              <li><i class="fa-solid fa-check-circle"></i> <span><strong>Reaktor Nuklir:</strong> Pembangkit tenaga uranium dengan sistem pendingin canggih.</span></li>
+            </ul>
+            <a href="store.html" class="btn btn-primary">
+              <i class="fa-solid fa-flask"></i> Cek Booster Slimefun di Store
+            </a>
+          </div>
+
+          <div class="sf-preview-box">
+            <div class="sf-mini-stat">
+              <i class="fa-solid fa-microchip"></i>
+              <h4>Teknologi Modern</h4>
+              <p>Ratusan resep mekanik mesin otomatis.</p>
+            </div>
+            <div class="sf-mini-stat">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <h4>Magis & Alkimia</h4>
+              <p>Rune dan ramuan mistis berkekuatan luar biasa.</p>
+            </div>
+            <div class="sf-mini-stat">
+              <i class="fa-solid fa-jet-fighter-up"></i>
+              <h4>Peralatan Eksklusif</h4>
+              <p>Jetpack elektrik untuk menjelajahi angkasa.</p>
+            </div>
+            <div class="sf-mini-stat">
+              <i class="fa-solid fa-shield-cat"></i>
+              <h4>Armor Tingkat Tinggi</h4>
+              <p>Perlindungan ekstra dari armor berteknologi baru.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Join Section -->
+    <section class="section" id="panduan">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Panduan Bergabung</span>
+          <h2 class="section-title">Cara Bermain di NES5 NETWORK</h2>
+          <p class="section-desc">Hanya butuh waktu kurang dari 1 menit untuk memulai petualanganmu bersama kami!</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <div class="step-icon">
+              <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <h3>Buka Minecraft</h3>
+            <p>Jalankan Minecraft Java Edition versi 1.8 hingga versi terbaru 1.21 (Direkomendasikan versi 1.20.6).</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <div class="step-icon">
+              <i class="fa-solid fa-server"></i>
+            </div>
+            <h3>Pilih Multiplayer</h3>
+            <p>Masuk ke menu <strong>Multiplayer</strong>, lalu klik tombol <strong>Add Server</strong> (Tambah Server).</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <div class="step-icon">
+              <i class="fa-solid fa-keyboard"></i>
+            </div>
+            <h3>Masukkan IP Server</h3>
+            <p>Ketik alamat IP <code>java.nss.biz.id</code> pada kolom Server Address, lalu klik <strong>Done</strong>.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">04</div>
+            <div class="step-icon">
+              <i class="fa-solid fa-play"></i>
+            </div>
+            <h3>Klik Join & Mainkan!</h3>
+            <p>Pilih server NES5 NETWORK pada daftar server kamu dan klik <strong>Join Server</strong>. Selamat bermain!</p>
+          </div>
+        </div>
+
+        <!-- Discord Callout Banner -->
+        <div class="discord-banner">
+          <h3>Bergabunglah dengan Komunitas Discord!</h3>
+          <p>
+            Dapatkan info update berkala, event berhadiah bulanan, tiket bantuan admin, dan tempat berkumpul seru sesama pemain NES5 NETWORK.
+          </p>
+          <a href="https://discord.gg/nes5" target="_blank" rel="noopener" class="btn btn-discord">
+            <i class="fa-brands fa-discord"></i> Masuk Server Discord
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Bantuan & Informasi</span>
+          <h2 class="section-title">Pertanyaan Sering Diajukan (FAQ)</h2>
+          <p class="section-desc">Punya pertanyaan seputar server kami? Temukan jawabannya di bawah ini.</p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Apakah saya harus mengunduh modpack atau launcher khusus?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Tidak perlu sama sekali! Seluruh fitur canggih Slimefun 4, mesin listrik, dan reaktor nuklir berjalan murni menggunakan plugin di sisi server kami. Kamu cukup membuka client Minecraft original biasa tanpa memasang mod Forge/Fabric apapun.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Berapa alamat IP server NES5 NETWORK?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Alamat IP resmi server adalah <strong>java.nss.biz.id</strong>. Kamu bisa langsung mengklik kotak IP di bagian atas website ini untuk menyalinnya secara instan.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Versi Minecraft berapa saja yang didukung?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Server kami mendukung Minecraft Java Edition mulai dari versi 1.8 hingga 1.21. Kami sangat menyarankan bermain di versi 1.20.6 atau versi terbaru agar mendapatkan rendering visual dan fitur terbaik.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Bagaimana cara melindungi rumah dan barang dari griefing?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Gunakan sistem Land Claim! Kamu bisa mengklaim area tanahmu dengan mudah menggunakan golden shovel atau petunjuk perintah in-game. Area yang sudah diklaim 100% terlindung dari perusakan, pembongkaran, maupun pencurian pemain lain.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Bagaimana cara membeli rank atau item di Store?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Kamu bisa langsung mengunjungi halaman <a href="store.html">Toko Server kami</a>. Pilih produk yang kamu inginkan (Rank VIP, Crate Keys, atau Slimefun Booster), masukkan Username Minecraft kamu, dan selesaikan pembayaran via QRIS, DANA, GoPay, atau Transfer Bank dengan panduan staf kami.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="logo">
+            <div class="logo-badge"><i class="fa-solid fa-cube"></i></div>
+            <div class="logo-text">NES5 <span>NETWORK</span></div>
+          </div>
+          <p>
+            Server Minecraft Survival Slimefun 4 Indonesia terbaik dengan teknologi modern, ekonomi mandiri, proteksi wilayah, dan komunitas yang aktif.
+          </p>
+          <div class="footer-disclaimer">
+            Bukan layanan resmi Minecraft. Tidak disetujui oleh atau berafiliasi dengan Mojang Studios ataupun Microsoft Corporation.
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="#fitur">Fitur Server</a></li>
+            <li><a href="#slimefun">Slimefun 4</a></li>
+            <li><a href="store.html">Toko / Store</a></li>
+            <li><a href="#panduan">Panduan Join</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Tautan Luar</h4>
+          <ul>
+            <li><a href="https://minecraft-mp.com/server-s363257" target="_blank" rel="noopener">Minecraft-MP Page</a></li>
+            <li><a href="https://minecraft-mp.com/server/363257/vote/" target="_blank" rel="noopener">Vote Server</a></li>
+            <li><a href="https://discord.gg/nes5" target="_blank" rel="noopener">Discord Server</a></li>
+            <li><a href="https://nss.biz.id">Domain nss.biz.id</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 NES5 NETWORK. Seluruh hak cipta dilindungi.</div>
+        <div>Server IP: <code>java.nss.biz.id</code></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

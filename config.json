@@ -1,0 +1,228 @@
+{
+  "server": {
+    "name": "NES5 NETWORK",
+    "ip": "java.nss.biz.id",
+    "version": "1.8 - 1.21",
+    "nativeVersion": "1.20.6",
+    "motd": "[⚡] SLIMEFUN SURVIVAL ▪ 1.8 - 1.21✨ New Economy • Magic & Tech • Active Community | Let's Play!",
+    "currency": "Rp",
+    "currencyCode": "IDR",
+    "discordUrl": "https://discord.gg/nes5",
+    "whatsappNumber": "628123456789",
+    "adminContact": "Hubungi Admin via Ticket Discord atau WhatsApp jika membutuhkan bantuan donasi / pembelian.",
+    "paymentInstructions": "Setelah memilih produk, cantumkan Username Minecraft kamu. Pembayaran dapat dilakukan via QRIS, DANA, GoPay, OVO, atau Transfer Bank. Setelah transfer, kirim bukti bayar ke Admin untuk proses aktivasi kilat (1-5 menit)!"
+  },
+  "paymentMethods": [
+    { "id": "qris", "name": "QRIS (Semua Bank & E-Wallet)", "icon": "fa-qrcode" },
+    { "id": "dana", "name": "DANA", "icon": "fa-wallet" },
+    { "id": "gopay", "name": "GoPay", "icon": "fa-mobile-alt" },
+    { "id": "ovo", "name": "OVO", "icon": "fa-money-bill-wave" },
+    { "id": "bank", "name": "Transfer Bank (BCA / Mandiri / BRI)", "icon": "fa-university" }
+  ],
+  "categories": [
+    { "id": "all", "name": "Semua Item", "icon": "fa-th-large" },
+    { "id": "ranks", "name": "VIP Ranks", "icon": "fa-crown" },
+    { "id": "slimefun", "name": "Slimefun Tech & Magic", "icon": "fa-atom" },
+    { "id": "keys", "name": "Crate Keys", "icon": "fa-key" },
+    { "id": "economy", "name": "Koin & Claim", "icon": "fa-coins" }
+  ],
+  "products": [
+    {
+      "id": "rank-vip",
+      "name": "Rank VIP",
+      "category": "ranks",
+      "price": 25000,
+      "originalPrice": 35000,
+      "badge": "Hemat",
+      "badgeColor": "green",
+      "icon": "fa-shield-alt",
+      "duration": "Permanen / 30 Hari (Sesuai Pilihan)",
+      "description": "Rank permulaan yang sempurna untuk memulai petualangan di NES5 dengan berbagai kemudahan.",
+      "perks": [
+        "Prefix eksklusif [VIP] berwarna hijau mencolok",
+        "Akses perintah /fly di area claim pribadi",
+        "3x Slot Set Home (/sethome)",
+        "Bonus In-Game Currency $15,000",
+        "Akses Kit VIP mingguan (Armor & Tool Enchanted)",
+        "Akses prioritas masuk saat server penuh"
+      ]
+    },
+    {
+      "id": "rank-mvp",
+      "name": "Rank MVP",
+      "category": "ranks",
+      "price": 50000,
+      "originalPrice": 70000,
+      "badge": "TERPOPULER",
+      "badgeColor": "amber",
+      "icon": "fa-star",
+      "duration": "Permanen",
+      "description": "Pilihan favorit para pemain! Nikmati kebebasan berkreasi dan keuntungan survival maksimal.",
+      "perks": [
+        "Semua keuntungan Rank VIP",
+        "Prefix mewah [MVP] dengan warna aqua glowing",
+        "/fly tanpa batasan di seluruh dunia Survival",
+        "7x Slot Set Home (/sethome)",
+        "Bonus In-Game Currency $40,000",
+        "Akses Kit MVP eksklusif (Netherite tier gear)",
+        "/workbench, /anvil, dan /enderchest portabel kapan saja",
+        "Diskon 10% di NPC Server Shop"
+      ]
+    },
+    {
+      "id": "rank-nes-pro",
+      "name": "Rank NES-PRO",
+      "category": "ranks",
+      "price": 100000,
+      "originalPrice": 140000,
+      "badge": "ULTIMATE",
+      "badgeColor": "purple",
+      "icon": "fa-crown",
+      "duration": "Permanen",
+      "description": "Tingkat tertinggi bagi sultan NES5 NETWORK dengan fasilitas komplit tak tertandingi!",
+      "perks": [
+        "Semua keuntungan VIP & MVP",
+        "Prefix prestisius [NES-PRO] bergradasi emas",
+        "Slot Set Home Tanpa Batas (Unlimited /sethome)",
+        "Bonus In-Game Currency $100,000",
+        "Kit NES-PRO: Full Mythic Gear & Slimefun Resources",
+        "/feed dan /heal harian untuk kenyamanan bermain",
+        "/hat, /glow, dan efek partikel kosmetik sultan",
+        "Hak akses Discord VIP Lounge & role khusus"
+      ]
+    },
+    {
+      "id": "sf-starter",
+      "name": "Slimefun Starter Pack",
+      "category": "slimefun",
+      "price": 20000,
+      "originalPrice": 25000,
+      "badge": "Pemula",
+      "badgeColor": "blue",
+      "icon": "fa-book-open",
+      "duration": "Satu Kali Klaim",
+      "description": "Lewati fase grind awal dan langsung terjun membangun mesin teknologi Slimefun 4!",
+      "perks": [
+        "Slimefun Guide Book Lengkap siap pakai",
+        "64x Magical Dust untuk riset sihir",
+        "32x Synthetic Diamond & Carbon",
+        "16x Basic Circuit Board",
+        "1x Starter Electricity Generator & Regulator",
+        "Bonus $10,000 untuk modal belanja komponen"
+      ]
+    },
+    {
+      "id": "sf-nuclear-bundle",
+      "name": "Nuclear Reactor Tech Bundle",
+      "category": "slimefun",
+      "price": 45000,
+      "originalPrice": 60000,
+      "badge": "HOT ITEM",
+      "badgeColor": "red",
+      "icon": "fa-radiation",
+      "duration": "Satu Kali Klaim",
+      "description": "Bangkitkan energi raksasa untuk pabrik industri otomatis dengan reaktor nuklir canggih.",
+      "perks": [
+        "1x Full Set Nuclear Reactor Multiblock Components",
+        "64x Refined Uranium Rods",
+        "128x Reactor Cooling Cells",
+        "1x Electric Jetpack (Baterai Maksimal)",
+        "1x Energy Capacitor Tier 3 (1,000,000 J)",
+        "Panduan setup reaktor anti-meledak"
+      ]
+    },
+    {
+      "id": "sf-magic-alchemist",
+      "name": "Grand Alchemist Tome",
+      "category": "slimefun",
+      "price": 35000,
+      "originalPrice": 45000,
+      "badge": "Magic",
+      "badgeColor": "purple",
+      "icon": "fa-wand-magic-sparkles",
+      "duration": "Satu Kali Klaim",
+      "description": "Paket riset magis lengkap dengan artefak langka, ramuan khusus, dan rune magis Slimefun.",
+      "perks": [
+        "1x Ancient Altar & Pedestal Components",
+        "16x Blank Runes & Fire/Water/Earth/Air Essences",
+        "1x Talisman of the Angel (Mencegah Fall Damage)",
+        "1x Tome of Knowledge (Buka Ratusan Recipe Slimefun)",
+        "Staff of Wind & Staff of Lightning"
+      ]
+    },
+    {
+      "id": "crate-legendary-3",
+      "name": "3x Legendary Crate Keys",
+      "category": "keys",
+      "price": 15000,
+      "originalPrice": 20000,
+      "badge": "Best Value",
+      "badgeColor": "amber",
+      "icon": "fa-key",
+      "duration": "Langsung dikirim in-game",
+      "description": "Buka peti harta karun legendaris di spawn dan dapatkan drop gear tingkat dewa!",
+      "perks": [
+        "3x Kunci Peti Legendary di Spawn Area",
+        "Peluang mendapatkan Senjata & Armor Custom Slimefun",
+        "Peluang jackpot uang hingga $250,000",
+        "Peluang memenangkan voucher Rank Upgrade",
+        "100% Dijamin mendapat item tier berharga"
+      ]
+    },
+    {
+      "id": "crate-mystic-5",
+      "name": "5x Mystic Crate Keys",
+      "category": "keys",
+      "price": 25000,
+      "originalPrice": 35000,
+      "badge": "Laris",
+      "badgeColor": "green",
+      "icon": "fa-gem",
+      "duration": "Langsung dikirim in-game",
+      "description": "Koleksi kunci mistik untuk membuka crate spesial dengan efek visual kosmetik unik.",
+      "perks": [
+        "5x Kunci Peti Mystic Crate",
+        "Akses efek kosmetik partikel & kill effect",
+        "Rare Material Caches untuk teknologi Slimefun",
+        "Bonus 500 Claim Blocks setiap pembukaan"
+      ]
+    },
+    {
+      "id": "money-50k",
+      "name": "Paket Saldo $50,000",
+      "category": "economy",
+      "price": 10000,
+      "originalPrice": 15000,
+      "badge": "Instan",
+      "badgeColor": "blue",
+      "icon": "fa-money-bill-wave",
+      "duration": "Langsung Masuk Akun",
+      "description": "Suntikan dana instan ke rekening in-game kamu untuk belanja di pasar pemain.",
+      "perks": [
+        "$50,000 In-game money",
+        "Dapat dipakai untuk beli barang di /ah atau /shop",
+        "Dapat digunakan untuk sewa stan player shop di spawn",
+        "Transaksi instan tanpa delay"
+      ]
+    },
+    {
+      "id": "claim-blocks-2500",
+      "name": "2.500 Extra Claim Blocks",
+      "category": "economy",
+      "price": 15000,
+      "originalPrice": 20000,
+      "badge": "Anti-Grief",
+      "badgeColor": "green",
+      "icon": "fa-layer-group",
+      "duration": "Permanen",
+      "description": "Perluas kerajaan dan pabrik Slimefun-mu tanpa takut di-grief atau diganggu pemain lain.",
+      "perks": [
+        "+2,500 Block proteksi tanah / land claim",
+        "Proteksi penuh dari ledakan creeper, api, dan maling",
+        "Bisa memberi izin sub-claim untuk teman terpercaya",
+        "Klaim permanen tidak akan kedaluwarsa"
+      ]
+    }
+  ]
+}
+
